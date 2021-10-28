@@ -1,17 +1,19 @@
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Dictionary {
    private String name ;
 
 
-    Map<String, String> translations ;
+    Map<String, List<String>> translations ;
 
 
     public Dictionary(String name) {
         this.name=name;
         this.translations = new HashMap<>();
+        for(int i=0;i<this.translations.size();i++){
+
+        }
+
 
 
     }
@@ -27,13 +29,14 @@ public class Dictionary {
       return false;
     }
 
-    public void addTranslation(String contre, String against) {
+    public void addTranslation(String contre, List<String> against) {
 
         translations.put(contre,against);
     }
 
-    public String getTranslation(String contre) {
+    public List<String> getTranslation(String contre) {
         return  translations.get(contre);
     }
+
 }
 

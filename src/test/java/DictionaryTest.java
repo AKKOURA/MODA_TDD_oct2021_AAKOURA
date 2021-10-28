@@ -1,11 +1,13 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.DataProvider;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -39,10 +41,17 @@ public class DictionaryTest {
     }
     @Test
      public void testOneTranslation() {
-         dict.addTranslation("contre", "against");
-         dict.addTranslation("aisha", "emma");
-         assertThat(dict.getTranslation("contre"), equalTo("against"));
-         assertThat(dict.getTranslation("aisha"), equalTo("emma"));
+         dict.addTranslation("contre", List.of("against"));
+         dict.addTranslation("aisha", List.of("emma"));
+         assertThat(dict.getTranslation("contre"), equalTo(List.of("against")));
+         assertThat(dict.getTranslation("aisha"),equalTo(List.of("emma")));
+
+    }
+
+    @Test
+    public void testTwoWayTranslation() {
+        dict.addTranslation("contre", List.of("jj", "kk", "ll"));
+        assertThat(dict.getTranslation("contre"), containsInAnyOrder("jj", "kk","ll"));
 
     }
 
