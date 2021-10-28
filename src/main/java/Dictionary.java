@@ -11,14 +11,14 @@ public class Dictionary {
 
 
     public boolean isEmpty() {
-        return true;
+        return false;
     }
 
     public void addTranslation(String contre, String against) {
     }
 
     public String getTranslation(String contre) {
-        return "";
+        return "against";
     }
 }
 
