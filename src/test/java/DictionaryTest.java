@@ -34,4 +34,11 @@ public class DictionaryTest {
         Assert.assertFalse(dict.isEmpty());
     }
 
+    @Test public void testOneTranslation() {
+
+        assertThat(dict.getTranslation("contre"), equalTo("against"));
+    }
+
+
+
 }
