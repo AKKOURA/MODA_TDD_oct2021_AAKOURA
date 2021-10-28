@@ -1,8 +1,18 @@
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Dictionary {
    private String name ;
 
+
+    Map<String, String> translations ;
+
+
     public Dictionary(String name) {
         this.name=name;
+        this.translations = new HashMap<>();
+
 
     }
     public String getNom() {
@@ -15,10 +25,12 @@ public class Dictionary {
     }
 
     public void addTranslation(String contre, String against) {
+
+        translations.put(contre,against);
     }
 
     public String getTranslation(String contre) {
-        return "against";
+        return  translations.get(contre);
     }
 }
 

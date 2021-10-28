@@ -24,10 +24,11 @@ public class DictionaryTest {
     {
     }
     //Data
-    @DataProvider(name = "different")
+    @DataProvider(name = "translation")
     public Object[][] createWinData() {
         return new Object[][] {
                 { "contre", "against" },
+                {"aisha","emma"}
         };
     }
 
@@ -44,10 +45,10 @@ public class DictionaryTest {
     }
     @Test
      public void testOneTranslation() {
-        dict.addTranslation("contre", "against");
+         dict.addTranslation("contre", "against");
          dict.addTranslation("aisha", "emma");
          assertThat(dict.getTranslation("contre"), equalTo("against"));
-         assertThat(dict.getTranslation("aisha"), equalTo("against"));
+         assertThat(dict.getTranslation("aisha"), equalTo("emma"));
 
     }
 
