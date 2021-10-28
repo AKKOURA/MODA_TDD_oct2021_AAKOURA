@@ -1,10 +1,11 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.DataProvider;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class DictionaryTest {
@@ -22,6 +23,14 @@ public class DictionaryTest {
     void tearDownClass()
     {
     }
+    //Data
+    @DataProvider(name = "different")
+    public Object[][] createWinData() {
+        return new Object[][] {
+                { "contre", "against" },
+        };
+    }
+
 
     @Test
     public void testDictionaryName() {
@@ -31,12 +40,15 @@ public class DictionaryTest {
     }
     @Test
     public void testDictionaryIsEmpty() {
-        Assert.assertFalse(dict.isEmpty());
+        assertFalse(dict.isEmpty());
     }
+    @Test
+     public void testOneTranslation() {
+        dict.addTranslation("contre", "against");
+         dict.addTranslation("aisha", "emma");
+         assertThat(dict.getTranslation("contre"), equalTo("against"));
+         assertThat(dict.getTranslation("aisha"), equalTo("against"));
 
-    @Test public void testOneTranslation() {
-
-        assertThat(dict.getTranslation("contre"), equalTo("against"));
     }
 
 
