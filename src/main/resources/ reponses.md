@@ -6,6 +6,6 @@ FakeIt.5.Quelle duplication existe pour l’instant dans notre code: on avait pa
 pour corriger cette duplication,on a introduit une variable et on l'a initialiser.
 Triangulation.2; oui c'est  pas possible de faire un test meme avec une seul de ces 2 méthode juste en modifiant le retour de la méthode isEmpty qui va devenir false dans se cas ,en effet ce sont deux méthodes avec un comportement différent
 TraductionMultiple.1: pour gérer les traductions multiples, je propose  qu'on modifie la structure de la map <String,List<Sring>> pour que chaque nom a plusieurs traductions
-
+Pour résoudre le probleme de la traduction inverse, j'ai parcouru la map et par la suite je récupère cette fois la clé de la liste de valeurs, afin de pouvoir l'utiliser dans le test 
 
 
