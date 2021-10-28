@@ -10,5 +10,9 @@ public class Dictionary {
     }
 
 
+    public boolean isEmpty() {
+        return name.isEmpty() ? true :false;
+    }
+
 }
 

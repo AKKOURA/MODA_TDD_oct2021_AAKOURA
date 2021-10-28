@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 
 public class DictionaryTest {
@@ -23,7 +25,13 @@ public class DictionaryTest {
 
     @Test
     public void testDictionaryName() {
-        Assert.assertEquals(this.dict.getNom(), "Exemple");
+
+        assertThat(dict.getNom(), equalTo("Exemple"));
+        //Assert.assertEquals(this.dict.getNom(), "Exemple");
+    }
+    @Test
+    public void testDictionaryIsEmpty() {
+        Assert.assertFalse(dict.isEmpty());
     }
 
 }
