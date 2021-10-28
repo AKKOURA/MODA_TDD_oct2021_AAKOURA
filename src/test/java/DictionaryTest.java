@@ -6,6 +6,7 @@ import org.testng.annotations.DataProvider;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class DictionaryTest {
@@ -23,14 +24,7 @@ public class DictionaryTest {
     void tearDownClass()
     {
     }
-    //Data
-    @DataProvider(name = "translation")
-    public Object[][] createWinData() {
-        return new Object[][] {
-                { "contre", "against" },
-                {"aisha","emma"}
-        };
-    }
+
 
 
     @Test
@@ -41,7 +35,7 @@ public class DictionaryTest {
     }
     @Test
     public void testDictionaryIsEmpty() {
-        assertFalse(dict.isEmpty());
+        assertTrue(dict.isEmpty());
     }
     @Test
      public void testOneTranslation() {
