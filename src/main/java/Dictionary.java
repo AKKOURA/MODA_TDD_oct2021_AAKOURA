@@ -37,6 +37,16 @@ public class Dictionary {
     public List<String> getMultipleTranslations(String contre) {
         return  translations.get(contre);
     }
+    public String getKeyTranslation(List<String> list){
+        for (Map.Entry entry : this.translations.entrySet()) {
+            if (Objects.equals(list, entry.getValue())) {
+                return entry.getKey().toString();
+            }
+        }
+        return null;
+
+
+    }
 
 }
 

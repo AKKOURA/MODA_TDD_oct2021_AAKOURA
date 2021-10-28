@@ -54,6 +54,14 @@ public class DictionaryTest {
         assertThat(dict.getMultipleTranslations("contre"), containsInAnyOrder("jj", "kk","ll"));
 
     }
+    @Test
+    public void testTraductionInverse(){
+        dict. addMultipleTranslation("contre", List.of("jj", "kk", "ll"));
+        assertThat(dict.getMultipleTranslations("contre"),containsInAnyOrder("jj", "kk","ll"));
+        assertThat(dict.getKeyTranslation(List.of("jj", "kk", "ll")),equalTo("contre"));
+
+    }
+
 
 
 
