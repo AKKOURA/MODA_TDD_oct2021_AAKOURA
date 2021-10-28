@@ -29,12 +29,12 @@ public class Dictionary {
       return false;
     }
 
-    public void addTranslation(String contre, List<String> against) {
+    public void addMultipleTranslation(String contre, List<String> against) {
 
         translations.put(contre,against);
     }
 
-    public List<String> getTranslation(String contre) {
+    public List<String> getMultipleTranslations(String contre) {
         return  translations.get(contre);
     }
 

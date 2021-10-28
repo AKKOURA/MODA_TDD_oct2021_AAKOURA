@@ -41,17 +41,17 @@ public class DictionaryTest {
     }
     @Test
      public void testOneTranslation() {
-         dict.addTranslation("contre", List.of("against"));
-         dict.addTranslation("aisha", List.of("emma"));
-         assertThat(dict.getTranslation("contre"), equalTo(List.of("against")));
-         assertThat(dict.getTranslation("aisha"),equalTo(List.of("emma")));
+         dict.addMultipleTranslation("contre", List.of("against"));
+         dict.addMultipleTranslation("aisha", List.of("emma"));
+         assertThat(dict.getMultipleTranslations("contre"), equalTo(List.of("against")));
+         assertThat(dict.getMultipleTranslations("aisha"),equalTo(List.of("emma")));
 
     }
 
     @Test
     public void testTwoWayTranslation() {
-        dict.addTranslation("contre", List.of("jj", "kk", "ll"));
-        assertThat(dict.getTranslation("contre"), containsInAnyOrder("jj", "kk","ll"));
+        dict. addMultipleTranslation("contre", List.of("jj", "kk", "ll"));
+        assertThat(dict.getMultipleTranslations("contre"), containsInAnyOrder("jj", "kk","ll"));
 
     }
 
