@@ -1,7 +1,8 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+
 
 
 public class DictionaryTest {
@@ -9,10 +10,10 @@ public class DictionaryTest {
     public DictionaryTest() {
 
     }
-    @BeforeClass
+    @BeforeEach
     void setUpClass()
     {
-
+       this.dict=new Dictionary("Exemple");
     }
 
     @AfterClass
@@ -21,13 +22,8 @@ public class DictionaryTest {
     }
 
     @Test
-    public void testCreateDictionary() {
-        Assert.assertEquals(this.dict, new Dictionary("Exemple"));
-    }
-    @Test
     public void testDictionaryName() {
-        Assert.assertEquals(dict.getNom(), "Example");
+        Assert.assertEquals(this.dict.getNom(), "Exemple");
     }
-
 
 }

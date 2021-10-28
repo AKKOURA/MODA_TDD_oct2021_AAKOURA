@@ -1,11 +1,12 @@
 public class Dictionary {
+   private String name ;
 
-    public Dictionary() {
+    public Dictionary(String name) {
+        this.name=name;
 
     }
-
-    public static  String getNom() {
-        return "Exemple";
+    public String getNom() {
+        return this.name;
     }
 
 
